@@ -5,23 +5,19 @@ import (
 )
 
 func main() {
-	fmt.Println(CountChar("Hello World", 'l'))
-	fmt.Println(CountChar("5  balloons", 5))
-	fmt.Println(CountChar("   ", ' '))
-	fmt.Println(CountChar("The 7 deadly sins", '7'))
+	fmt.Print(PrintIf("abcdefz"))
+	fmt.Print(PrintIf("abc"))
+	fmt.Print(PrintIf(""))
+	fmt.Print(PrintIf("14"))
 }
 
-func CountChar(str string, c rune) int {
-count := 0
-if str == "" {
-	return 0
-}
-for _, char := range str {
-
-	if char == c {
-		count++
+func PrintIf(str string) string {
+	if str == "" {
+		return "G" + "\n"
 	}
-
+if len(str) < 3 {
+	return "Invalid Input" + "\n"
 }
-return count
+
+return "G" + "\n"
 }
