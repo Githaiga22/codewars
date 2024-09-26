@@ -5,19 +5,26 @@ import (
 )
 
 func main() {
-	fmt.Print(PrintIf("abcdefz"))
-	fmt.Print(PrintIf("abc"))
-	fmt.Print(PrintIf(""))
-	fmt.Print(PrintIf("14"))
+	fmt.Println(DigitLen(100, 10))
+	fmt.Println(DigitLen(100, 2))
+	fmt.Println(DigitLen(-100, 16))
+	fmt.Println(DigitLen(100, -1))
 }
 
-func PrintIf(str string) string {
-	if str == "" {
-		return "G" + "\n"
-	}
-if len(str) < 3 {
-	return "Invalid Input" + "\n"
+
+func DigitLen(n, base int) int {
+if base < 2 || base > 36 {
+	return -1
+}
+if n < 0 {
+	n = -n
 }
 
-return "G" + "\n"
+count := 0
+
+for n > 0 {
+	n = n/base
+	count++
+}
+return count
 }
