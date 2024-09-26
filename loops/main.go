@@ -2,29 +2,22 @@ package main
 
 import (
 	"fmt"
+
 )
 
 func main() {
-	fmt.Println(DigitLen(100, 10))
-	fmt.Println(DigitLen(100, 2))
-	fmt.Println(DigitLen(-100, 16))
-	fmt.Println(DigitLen(100, -1))
+	s := "Hello World!"
+	s = StrRev(s)
+	fmt.Println(s)
 }
 
+func StrRev(s string) string {
 
-func DigitLen(n, base int) int {
-if base < 2 || base > 36 {
-	return -1
-}
-if n < 0 {
-	n = -n
+res := ""
+
+for i := len(s)-1; i >= 0; i--{
+	res += string(s[i])
 }
 
-count := 0
-
-for n > 0 {
-	n = n/base
-	count++
-}
-return count
+return res
 }
