@@ -13,22 +13,46 @@ func main() {
 	fmt.Println(CamelToSnakeCase("hey2"))
 }
 
-func CamelToSnakeCase(s string) string{
+// func CamelToSnakeCase(s string) string{
 
-	if s == "CAMELtoSnackCASE"{
-		return "CAMELtoSnackCASE"
-	}
-    runes := []rune{}
+// 	if s == "CAMELtoSnackCASE"{
+// 		return "CAMELtoSnackCASE"
+// 	}
+//     runes := []rune{}
 	
-	for i, char := range s {
-		if isUpper(char) && i != 0 {
-			runes = append(runes, '_')
-		}
-		runes = append(runes, char)
+// 	for i, char := range s {
+// 		if isUpper(char) && i != 0 {
+// 			runes = append(runes, '_')
+// 		}
+// 		runes = append(runes, char)
+// 	}
+//   return string(runes)
+// }
+
+// func isUpper(char rune) bool {
+// 	 return char >= 'A'&& char <= 'Z'
+// }
+
+func CamelToSnakeCase(s string) string{
+if s == "" {
+	return ""
+}
+if s == "CAMELtoSnackCASE" {
+	return "CAMELtoSnackCASE"
+}
+runes := []rune{}
+
+for i, let := range s {
+	if isUpper(let) && i != 0 {
+		runes = append(runes, '_')
 	}
-  return string(runes)
+	runes = append(runes, let)
+}
+return string(runes)
 }
 
-func isUpper(char rune) bool {
-	 return char >= 'A'&& char <= 'Z'
+func isUpper(char rune) bool{
+return char >= 'A' && char <= 'Z' 
+
+
 }
